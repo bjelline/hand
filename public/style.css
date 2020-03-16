@@ -1,0 +1,319 @@
+:root {
+  --hue: 270;
+  --color: hsl(var(--hue), 100%, 40%);
+  --color-light: hsl(calc(var(--hue) + 5), 75%, 50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0;
+}
+
+h1 {
+  font-style: italic;
+  color: var(--color);
+}
+
+.home h1 {
+  margin-top: 2rem;
+}
+
+.app > * {
+  margin: 0;
+}
+
+.app {
+  display: grid;
+  padding: 0;
+  width: 100%;
+  padding: 1em;
+  align-items: start;
+  margin: 0 auto;
+  grid-gap: 1em;
+  overflow: hidden;
+  position: relative;
+}
+
+.app.host {
+  max-width: 100%;
+  height: 95vh;
+  grid-template-rows: auto auto 1fr auto;
+}
+.app.home {
+  max-width: 400px;
+}
+
+ul {
+  padding: 0;
+  display: grid;
+  grid-gap: 1em;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+li input[type=checkbox] {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+li > * {
+  margin: 0;
+}
+li > * + * {
+  margin-left: 1em;
+}
+
+li.empty {
+  font-style: italic;
+  justify-content: center;
+  color: #444;
+}
+
+label {
+  color: #444;
+  font-size: .8rem;
+  margin-bottom: 1em;
+  display: block;
+}
+
+input:not([type]),
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select {
+  display: block;
+}
+
+input, select, button {
+  font: inherit;
+  font-size: 1rem;
+  padding: .25em .5em;
+  border-radius: 0;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  border-radius: .3rem;
+  background: #f0f0f0;
+  padding: .25rem 1rem;
+  cursor: pointer;
+  color: #444;
+  border: 2px solid;
+  border-color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background: #fff;
+  border-color: #ccc;
+}
+
+button:active {
+  transform: translateY(.1em);
+}
+
+button[disabled],
+button[disabled]:hover {
+  background: #ccc;
+  color: #888;
+}
+
+button.link {
+  padding: 0;
+  display: inline-block;
+  color: currentColor;
+  background: transparent;
+  border: 0 none;
+  margin: 0;
+  color: blue;
+}
+
+button.link:hover {
+  text-decoration: underline;
+}
+
+.name {
+  text-align: center;
+  height: 2rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.name span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.edit-name {
+  text-align: center;
+  width: 100%;
+  font-size: inherit;
+  background: #f0f0f0;
+}
+
+.current {
+  font-size: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 13rem;
+}
+
+.reactions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 1em;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+.reactions button {
+  padding: 0;
+  font-size: 1.4rem;
+}
+.reactions button.clear {
+  font-size: .8rem;
+}
+.reactions button.current {
+  border: 3px solid black;
+}
+
+@media screen and (max-width: 400px) {
+  .reactions {
+    gap: 1em .5em;
+  }
+  .stats {
+    justify-content: space-between;
+  }
+}
+
+.participants {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.participants .layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.participant {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 8em;
+  height: 6em;
+  border: 1px solid #ccc;
+}
+.participant-name {
+  font-size: .8em;
+  line-height: 1.1;
+  word-wrap:break-word;
+  overflow: hidden;
+  max-height: 2.2em;
+}
+.participant-status {
+  font-size: 3.2em;
+  height: 1em;
+  line-height: 1.2em;
+}
+
+.room {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 1em;
+}
+
+input.join {
+  width: 50px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  top: -100vh;
+  height: -100vh;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 1.4em;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.stats > * + * {
+  margin-left: 1em;
+}
+.stats > div {
+  white-space: nowrap;
+}
+
+.dialog {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: calc(100% - 2em);
+  max-width: 300px;
+  background: #fff;
+  padding: 1em;
+  border: 1px solid #000;
+  z-index: 1;
+  display: grid;
+  gap: 1em;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,.2);
+}
+.dialog > * {
+  margin: 0;
+}
+
+
+@media screen and (max-width: 700px) {
+  footer {
+    font-size: 1em;
+  }
+}

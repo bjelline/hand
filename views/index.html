@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Remote Hands</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">    
+  </head>
+  <body>
+    <div class="app home">
+      <h1>
+        Remote Hands
+      </h1>
+      <p>
+        Join a room, and share the name of the room or the URL with everyone attending. You can set a status, which will appear on others' devices so they can see when a hand is raised,  do a thumb up/down poll, or let each other know of AV and other problems. Pairs great with a video or conference call!
+      </p>
+      <form action="/join" method="get">
+        <h2>
+          Join a room:
+        </h2>
+        <label>
+          Your Name
+          <input name="name">
+        </label>
+        <label>
+          Room Name
+          <input name="room">
+        </label>
+        <button>
+          Join
+        </button>
+      </form>
+    </div>
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js" defer></script>
+  </body>
+</html>
